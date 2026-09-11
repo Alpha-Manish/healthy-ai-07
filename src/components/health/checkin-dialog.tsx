@@ -94,7 +94,14 @@ export function CheckInDialog({
                 <Label>Pain level</Label>
                 <span className="text-sm font-semibold text-primary">{pain}/10</span>
               </div>
-              <Slider value={[pain]} min={0} max={10} step={1} onValueChange={(v) => setPain(v[0])} />
+              <Slider
+                value={[pain]}
+                min={0}
+                max={10}
+                step={1}
+                onValueChange={(v) => setPain(v[0] ?? 0)}
+              />
+
               <div className="flex justify-between text-xs text-muted-foreground">
                 <span>No pain</span>
                 <span>Worst pain</span>
